@@ -40,5 +40,12 @@ int main(){
         airport[i].runways = runways;
         airport[i].time = time;
     }
+
+    qsort(airport, num, sizeof(AIRPORT), cmp);
+    for(int i=0; i<num; i++) {
+        printf("%s (%s): %d\n", 
+            airport[i].name, airport[i].city,
+                airport[i].time);
+    }
     return 0;
 }
